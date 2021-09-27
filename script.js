@@ -1,7 +1,16 @@
-"use strict"
+"use strict";
 
-let numberOfFilms = +prompt("Сколько фильмов вы посмотрели?", "");
-// console.log(numberOfFilms);
+let numberOfFilms;
+
+function start() {
+    numberOfFilms = +prompt("Сколько фильмов вы посмотрели?", "");
+
+    while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt("Сколько фильмов вы посмотрели?", "");
+    }
+}
+
+start();
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -32,13 +41,3 @@ for (let i = 0; i < 2; i++) {
 }
 
 console.log(personalMovieDB.movies);
-
-// console.log(fi);
-//       b = prompt('На сколько оцениете его?', '');
-//       c = prompt('Один из последних просмотренных фильмов?', ''),
-//       d = prompt('На сколько оцениете его?', '');
-
-// personalMovieDB.movies[a] = b;
-// personalMovieDB.movies[c] = d;
-
-// console.log(personalMovieDB);
