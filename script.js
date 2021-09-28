@@ -24,6 +24,7 @@ rememberMyFilms();
 detectPersonalLevel();
 showMyDB(personalMovieDB.privat);
 writeYourGenres();
+printDBProp(personalMovieDB);
 
 function detectPersonalLevel() {
     if (personalMovieDB.count < 10) {
@@ -58,5 +59,11 @@ function showMyDB(hidden) {
 function writeYourGenres() {
     for (let i = 1; i < 4; i++) {
         personalMovieDB.genres[i - 1] = prompt(`Ваш либимый жанр под номером ${i}`)
+    }
+}
+
+function printDBProp(obj) {
+    for (let key in obj) {
+        console.log(`Свойство ${key}, значение ${obj[key]}`)
     }
 }
