@@ -35,10 +35,10 @@ const personalMovieDB = {
         }
     },
     toggleVisibleMyDB: function () {
-        if (this.privat == false) {
-            this.privat = true;
-        } else if (this.privat == true) {
+        if (this.privat) {
             this.privat = false;
+        } else {
+            this.privat = true;
         }
         this.showMyDB();
         console.log(this.privat);
@@ -71,9 +71,9 @@ console.log(personalMovieDB.count);
 personalMovieDB.detectPersonalLevel();
 personalMovieDB.rememberMyFilms();
 
-// for (let i = 1; i < 10; i++) {
-//     personalMovieDB.toggleVisibleMyDB();
-// };
+for (let i = 1; i < 10; i++) {
+    personalMovieDB.toggleVisibleMyDB();
+};
 personalMovieDB.writeYourGenres();
 // personalMovieDB.printDBProp();
 console.log(personalMovieDB);
